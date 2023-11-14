@@ -1,7 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 
-# Подключение к MongoDB
-MONGO_DETAILS = "mongodb://mongodb:27017"
+# MONGO_DETAILS = "mongodb://mongodb:27017"
+MONGO_DETAILS = "mongodb://localhost:27017"
 client = AsyncIOMotorClient(MONGO_DETAILS)
 
 
@@ -9,7 +9,7 @@ client = AsyncIOMotorClient(MONGO_DETAILS)
 database = client["My_database"]
 forms_collection = database["forms_collection"]
 
-# Шаблон формы для начальной вставки в базу данных
+# Шаблоны формы для начальной вставки в базу данных
 form_template = [
     {
         "name": "ContactForm",
@@ -38,7 +38,7 @@ form_template = [
 
 async def init_db():
     # Вставка шаблона формы в коллекцию
-    await forms_collection.insert_one(form_template)
+    await forms_collection.insert_many(form_template)
     print("Database initialized with one template.")
     client.close()
 
