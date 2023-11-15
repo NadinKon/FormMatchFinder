@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from app.database.database import connect_to_mongo, close_mongo_connection
-from app.routers.router import router as form_router
+from database.database import connect_to_mongo, close_mongo_connection
+from routers.router import router as form_router
 
 app = FastAPI()
 
