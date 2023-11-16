@@ -9,8 +9,6 @@ router = APIRouter()
 async def get_form(request: Request):
     form_data = await request.json()  # Получение данных
     matching_template_name = await find_matching_template(form_data, forms_collection)
-    print(form_data)
-    print(matching_template_name)
 
     if matching_template_name:
         return {"template_name": matching_template_name}
