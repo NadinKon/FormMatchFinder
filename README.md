@@ -10,8 +10,8 @@ Web-приложение для определения заполненных ф
 Клонируйте репозиторий https://github.com/NadinKon/FormMatchFinder.git <br>
 
 ### Работа
-Собрать образ: docker-compose build
-Запустить: docker-compose up или docker-compose up -d --build
+Собрать образ: docker-compose build <br>
+Запустить: docker-compose up или docker-compose up -d --build <br>
 
 После запуска, чтобы выполнить скрипт init_db.py и добавить шаблоны в базу данных MongoDB: <br>
 - получить доступ к контейнеру приложения: docker exec <br>
